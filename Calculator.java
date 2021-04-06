@@ -16,14 +16,12 @@ public class Calculator {
 		System.out.println("List of operations: add subtract multiply divide alphabetize");
 		System.out.println("Enter an operation:");
 		String operationDecision = nScan.nextLine();
-		if (operationDecision != operationAdd)
+		if (!operationDecision.equals(operationAdd) && !operationDecision.equals(operationSub))
 			System.out.println("Invalid input entered. Terminating...");
-		if (operationDecision.equalsIgnoreCase(operationAdd) == true) { // equalsIgnoreCase makes it case insensitive 
+		else if (operationDecision.equalsIgnoreCase(operationAdd) == true) { // equalsIgnoreCase makes it case insensitive 
 			System.out.print("Enter two integers: ");
 			int a = nScan.nextInt();
 			int b = nScan.nextInt();
-			if (a || b != int)
-				System.out.println("Invalid input entered. Terminating...");
 			numAdd = a + b;
 			System.out.println("Answer: " + numAdd);	
 		} else if (operationDecision.equalsIgnoreCase(operationSub) == true) {
@@ -46,7 +44,7 @@ public class Calculator {
 					System.out.println("Invalid input entered. Terminating...");
 				} else
 					numDivide = a / b;
-					System.out.printf("Answer: %.2f", numDivide);
+					//System.out.printf("Answer: %.2f", numDivide);
 		}
 		
 	}
